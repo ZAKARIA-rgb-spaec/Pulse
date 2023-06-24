@@ -1,0 +1,156 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ef3ee911-f0c3-487a-85c6-3d7f6916fef1</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>module1.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>machine-lock</Name>
+    <RootNamespace>machine-lock</RootNamespace>
+    <IsWindowsApplication>True</IsWindowsApplication>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <WebBrowserPort>4450</WebBrowserPort>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="classe1.py" />
+    <Compile Include="machine_lock.py" />
+    <Compile Include="module1.py">
+      <Publish>True</Publish>
+    </Compile>
+    <Compile Include="package1\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="static\3439372_61769.jpg" />
+    <Content Include="static\AA.css" />
+    <Content Include="static\AAAA1.jpeg" />
+    <Content Include="static\AAAAA.png" />
+    <Content Include="static\BB.css" />
+    <Content Include="static\bootstrap.min.css" />
+    <Content Include="static\bootstrap1.min.css" />
+    <Content Include="static\ecc.jpg" />
+    <Content Include="static\EEE.png" />
+    <Content Include="static\EMI.png" />
+    <Content Include="static\facebook.png" />
+    <Content Include="static\HIDE.jpg" />
+    <Content Include="static\iav.png" />
+    <Content Include="static\image 1.png" />
+    <Content Include="static\insea.png" />
+    <Content Include="static\instagram1.png" />
+    <Content Include="static\inscription.html" />
+    <Content Include="static\instagram.png" />
+    <Content Include="static\jj.png" />
+    <Content Include="static\js\bootstrap.min.js" />
+    <Content Include="static\js\bootstrap.min12.js" />
+    <Content Include="static\js\EEEE.js" />
+    <Content Include="static\js\jquery-3.3.1.min.js" />
+    <Content Include="static\js\main.js" />
+    <Content Include="static\js\popper.min.js" />
+    <Content Include="static\js\Script1.js" />
+    <Content Include="static\C.png" />
+    <Content Include="static\js\Script3.js" />
+    <Content Include="static\EEEEEEE" />
+    <Content Include="static\logo-web-50.jpg" />
+    <Content Include="static\mon-image.png" />
+    <Content Include="static\oeil.png" />
+    <Content Include="static\oeil1.png" />
+    <Content Include="static\patrick-tomasso-QMDap1TAu0g-unsplash.jpg" />
+    <Content Include="static\pppp" />
+    <Content Include="static\SH.png" />
+    <Content Include="static\signup-image.jpg" />
+    <Content Include="static\style-dark.css" />
+    <Content Include="static\style.css" />
+    <Content Include="static\style0.css" />
+    <Content Include="static\style111.css" />
+    <Content Include="static\style1119.css" />
+    <Content Include="static\style1234.css" />
+    <Content Include="static\style2.css" />
+    <Content Include="static\style3.css" />
+    <Content Include="static\A.png" />
+    <Content Include="static\B.png" />
+    <Content Include="static\style4.css" />
+    <Content Include="static\style4444.css" />
+    <Content Include="static\style5.css" />
+    <Content Include="static\style7.css" />
+    <Content Include="static\team-1.jpg" />
+    <Content Include="static\team-3.jpg" />
+    <Content Include="static\team-4.jpg" />
+    <Content Include="static\twitter.png" />
+    <Content Include="templates\AboutUs.html" />
+    <Content Include="templates\changepassword.html" />
+    <Content Include="templates\dashboard.html" />
+    <Content Include="templates\edit_profile.html" />
+    <Content Include="templates\EEE.png" />
+    <Content Include="templates\facebook.png" />
+    <Content Include="templates\index11.html" />
+    <Content Include="templates\instagram.png" />
+    <Content Include="templates\profile.html" />
+    <Content Include="templates\reset_confirmation.html" />
+    <Content Include="templates\inscription.html" />
+    <Content Include="templates\laverie.html" />
+    <Content Include="templates\index.html" />
+    <Content Include="templates\login.html" />
+    <Content Include="templates\reserver.html" />
+    <Content Include="templates\reset.html" />
+    <Content Include="templates\reset_password.html" />
+    <Content Include="templates\reset_password_email.txt" />
+    <Content Include="templates\forgot_passwordd.html" />
+    <Content Include="templates\team.html" />
+    <Content Include="templates\twitter.png" />
+    <Content Include="templates\undraw_remotely_2j6y.svg" />
+    <Content Include="templates\—Pngtree—blue automatic washing machine beautiful_3868259.png" />
+    <Content Include="TextFile1.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="static\" />
+    <Folder Include="static\js\" />
+    <Folder Include="templates\" />
+    <Folder Include="package1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.10</Version>
+      <Description>env1 (Python 3.10 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+    <Interpreter Include="env3\">
+      <Id>env3</Id>
+      <Version>3.11</Version>
+      <Description>env3 (Python 3.11 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

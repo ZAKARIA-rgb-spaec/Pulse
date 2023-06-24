@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+<style>
+    /* Set font family and background color for the entire page */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    .member {
+        display: inline-block;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+        .member img {
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+            .member img:hover {
+                transform: scale(1.1);
+            }
+
+    .member-info {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        z-index: 1;
+    }
+
+        .member-info h2 {
+            margin-top: 0;
+        }
+    .member p {
+        margin-top: 5px;
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    /* Style the member information section */
+    .member-info {
+        background-color: #f2f2f2;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+        /* Style the member information section headings */
+        .member-info h2 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Style the member information section details */
+        .member-info p {
+            margin-top: 5px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+       
+
+
+</style>
+</head>
+
+<body>
+    <h1>Our Team</h1>
+
+    <div class="member" id="ismail">
+        <img src="static/team-1.jpg" alt="Ismail Cherkaoui">
+        <h2>Ismail Cherkaoui</h2>
+        <p>Software Engineer</p>
+        <div class="member-info" id="ismail-info">
+            <h2>Ismail Cherkaoui</h2>
+            <p>Software Engineer</p>
+            <p>Email: ismail@example.com</p>
+            <p>Phone: +1 234 567 8901</p>
+        </div>
+    </div>
+
+    <div class="member" id="zakaria">
+        <img src="static/team-1.jpg" alt="Zakaria Midine">
+        <h2>Zakaria Midine</h2>
+        <p>Web Developer</p>
+        <div class="member-info" id="zakaria-info">
+            <h2>Zakaria Midine</h2>
+            <p>Web Developer</p>
+            <p>Email: zakaria@example.com</p>
+            <p>Phone: +1 234 567 8901</p>
+        </div>
+    </div>
+
+    <div class="member" id="manal">
+        <img src="static/team-3.jpg" alt="Kermos Manal">
+        <h2>Kermos Manal</h2>
+        <p>Graphic Designer</p>
+
+        <div class="member-info" id="manal-info">
+            <h2>Kermos Manal</h2>
+            <p>Graphic Designer</p>
+            <p>Email: manal@example.com</p>
+            <p>Phone: +1 234 567 8901</p>
+        </div>
+    </div>
+
+    <div class="member" id="iman">
+        <img src="static/team-3.jpg" alt="Tachrift Iman">
+        <h2>Tachrift Iman</h2>
+        <p>Data Scientist</p>
+        <div class="member-info" id="iman-info">
+            <h2>Tachrift Iman</h2>
+            <p>Data Scientist</p>
+            <p>Email: iman@example.com</p>
+            <p>Phone: +1 234 567 8901</p>
+        </div>
+    </div>
+
+    <div class="member" id="abdo">
+        <img src="static/team-4.jpg" alt="Abdo Salehi">
+        <h2>Abdo Salehi</h2>
+        <p>Project Manager</p>
+        <div class="member-info" id="abdo-info">
+            <h2>Abdo Salehi</h2>
+            <p>Project Manager</p>
+            <p>Email: abdo@example.com</p>
+            <p>Phone: +1 234 567 8901</p>
+        </div>
+    </div>
+
+   
+
+   
+    <script>
+        const members = document.querySelectorAll('.member');
+        const memberInfos = document.querySelectorAll('.member-info');
+
+        members.forEach((member) => {
+            member.addEventListener('click', () => {
+                const memberId = member.id;
+                memberInfos.forEach((info) => {
+                    info.classList.remove('active');
+                    if (info.id === `${memberId}-info`) {
+                        info.classList.add('active');
+                    }
+                });
+            });
+        });
+
+    </script>
+   </body>
+</html>
+   
+

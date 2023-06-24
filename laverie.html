@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Etat de la laverie</title>
+    <link rel="icon" href="{{ url_for('static', filename='EEE.png') }}" sizes="32x32" type="image/png">
+    <title>Etat de Laverie</title>
+    <link rel="icon" href="{{ url_for('static', filename='EEE.png') }}" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style4.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+
+</head>
+<body>
+    <h1>Etat de la laverie</h1>
+    <p>Machine 1: <span id="etat_machine_1"></span></p>
+    <p>Machine 2: <span id="etat_machine_2"></span></p>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Fonction pour mettre à jour l'affichage de l'état de la laverie
+      function updateEtatLaverie(etatMachine1, etatMachine2) {
+        $('#etat_machine_1').text(etatMachine1 ? 'Disponible' : 'Occupée');
+        $('#etat_machine_2').text(etatMachine2 ? 'Disponible' : 'Occupée');
+      }
+
+      // Récupérer l'état de la laverie depuis le serveur Flask
+      $.getJSON('/etat_laverie', function(response) {
+        var etatMachine1 = response.etat_machine_1;
+        var etatMachine2 = response.etat_machine_2;
+        updateEtatLaverie(etatMachine1, etatMachine2);
+      });
+
+      // Mettre à jour l'affichage de l'état de la laverie lorsqu'un message est reçu sur le topic MQTT
+      var client = new Paho.MQTT.Client('localhost', 8000, 'clientId');
+      client.onConnectionLost = function(responseObject) {
+        console.log('Connection perdue: ' + responseObject.errorMessage);
+      };
+      client.onMessageArrived = function(message) {
+        var payload = message.payloadString;
+        var etatMachine1 = payload.split(',')[0] === 'True';
+        var etatMachine2 = payload.split(',')[1] === 'True';
+        updateEtatLaverie(etatMachine1, etatMachine2);
+      };
+      client.connect({
+        onSuccess: function() {
+          console.log('Connecté au broker MQTT.');
+          client.subscribe('topic/etat_laverie');
+        }
+      });
+    </script>
+</body>
+</html>
+
+
+
+
+
+

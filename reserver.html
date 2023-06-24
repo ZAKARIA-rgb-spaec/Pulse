@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Réservation machine à laver</title>
+    <link rel="icon" href="{{ url_for('static', filename='EEE.png') }}" sizes="32x32" type="image/png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+</head>
+<body>
+
+    <style>
+        /* Styles pour les écrans de petite taille */
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            label, input {
+                display: block;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .error-message {
+                font-size: 12px;
+            }
+        }
+
+        /* Styles pour les écrans de taille moyenne */
+        @media only screen and (min-width: 601px) and (max-width: 1024px) {
+            body {
+                font-size: 16px;
+            }
+
+            label, input {
+                width: 50%;
+                margin-bottom: 15px;
+            }
+
+            .error-message {
+                font-size: 14px;
+            }
+        }
+
+        /* Styles pour les écrans de grande taille */
+        @media only screen and (min-width: 1025px) {
+            body {
+                font-size: 18px;
+            }
+
+            label, input {
+                width: 30%;
+                margin-bottom: 20px;
+            }
+
+            .error-message {
+                font-size: 16px;
+            }
+        }
+
+        /*  */
+        @media (max-width: 768px) {
+            .navbar-collapse {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                z-index: 1;
+                background-color: #f8f9fa;
+                width: 100%;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .navbar-toggler {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    </style>
+    <br />
+    <br />
+    <form action="{{ url_for('reserver_machine') }}" method="POST">
+        <label for="id_utilisateur">ID Utilisateur :</label>
+        <input type="text" id="id_utilisateur" name="id_utilisateur" required><br><br>
+        <label for="nom">Votre nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        <label for="nom1">Votre prénom :</label>
+        <input type="text" id="nom1" name="nom1" required><br><br>
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required />
+        {% if reserved_slots %}
+        <p class="error-message">La plage horaire choisie est déjà réservée. Veuillez choisir une autre plage horaire.</p>
+        {% endif %}
+        <br />
+        <br />
+        <label for="mode_utilisation">Mode d'utilisation :</label>
+        <select name="mode_utilisation">
+            <option value="Mixte">Mixte</option>
+        </select>
+        <br />
+        <br />
+        <input type="submit" value="Réserver">
+    </form>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <style>
+        .error-message {
+            color: red;
+            font-weight: bold;
+        }
+
+    </style>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
